@@ -1,0 +1,51 @@
+/* styles.css */
+
+/* ToolTip */
+div[title] {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: lightgray;
+  color: black;
+  text-align: center;
+  line-height: 20px;
+  cursor: help;
+  margin-left: 10px; /* Adds a little spacing between the title and the tooltip */
+}
+
+/* TopBar */
+h2 {
+  display: inline; /* Ensures the tooltip displays beside the title */
+}
+
+/* EditForm */
+form {
+  margin-top: 20px; /* Spacing between the top bar and the form */
+}
+
+form div {
+  margin-bottom: 15px; /* Space between form fields */
+}
+
+label {
+  display: block; /* Makes the label appear above the input */
+  margin-bottom: 5px; /* Small spacing between label and its input field */
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 15px;
+  margin-right: 10px; /* Space between buttons */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: green;
+}
