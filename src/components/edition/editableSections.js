@@ -5,22 +5,37 @@ export const editableSections = [
     formFields: [
       {
         fieldName: "First Name",
-        placeholder: "John Doe",
+        placeholder: "Max",
         valueType: "string",
       },
       {
         fieldName: "Last Name",
-        placeholder: "Smith",
+        placeholder: "Müller",
         valueType: "string",
       },
       {
         fieldName: "Date of Birth",
-        placeholder: "MM/DD/YYYY",
+        placeholder: "DD/MM/YYYY",
         valueType: "date",
       },
       {
         fieldName: "Nationality",
-        placeholder: "American",
+        placeholder: "German",
+        valueType: "string",
+      },
+      {
+        fieldName: "Address",
+        placeholder: "Berliner Str. 123, 10178 Berlin",
+        valueType: "string",
+      },
+      {
+        fieldName: "Phone",
+        placeholder: "+49 170 1234567",
+        valueType: "string",
+      },
+      {
+        fieldName: "Email",
+        placeholder: "max.mueller@example.de",
         valueType: "string",
       },
     ],
@@ -31,12 +46,12 @@ export const editableSections = [
     formFields: [
       {
         fieldName: "Degree",
-        placeholder: "e.g. Bachelor's in Computer Science",
+        placeholder: "e.g. Master's in Biotechnology",
         valueType: "string",
       },
       {
         fieldName: "Institution",
-        placeholder: "e.g. Harvard University",
+        placeholder: "e.g. Technical University of Munich",
         valueType: "string",
       },
       {
@@ -46,7 +61,13 @@ export const editableSections = [
       },
       {
         fieldName: "Major",
-        placeholder: "e.g. Computer Science",
+        placeholder: "e.g. Biomedical Engineering",
+        valueType: "string",
+      },
+      {
+        fieldName: "Thesis Topic",
+        placeholder:
+          "e.g. Optimization of CRISPR-Cas9 for Targeted Gene Editing",
         valueType: "string",
       },
     ],
@@ -57,12 +78,12 @@ export const editableSections = [
     formFields: [
       {
         fieldName: "Job Title",
-        placeholder: "e.g. Software Developer",
+        placeholder: "e.g. Biotechnologist",
         valueType: "string",
       },
       {
         fieldName: "Company",
-        placeholder: "e.g. Google",
+        placeholder: "e.g. Bayer AG",
         valueType: "string",
       },
       {
@@ -77,7 +98,41 @@ export const editableSections = [
       },
       {
         fieldName: "Job Description",
-        placeholder: "Brief description of your role and responsibilities",
+        placeholder:
+          "e.g. Conducted research on protein synthesis in microorganisms",
+        valueType: "string",
+      },
+    ],
+  },
+  {
+    name: "Languages",
+    toolTipMessage: "Languages you speak and your proficiency level.",
+    formFields: [
+      {
+        fieldName: "Language",
+        placeholder: "e.g. German",
+        valueType: "string",
+      },
+      {
+        fieldName: "Proficiency",
+        placeholder: "e.g. Native",
+        valueType: "string",
+      },
+    ],
+  },
+  {
+    name: "Skills & Certifications",
+    toolTipMessage:
+      "List of technical skills, software proficiency, or certifications.",
+    formFields: [
+      {
+        fieldName: "Skill/Certification",
+        placeholder: "e.g. GMP (Good Manufacturing Practice) Certification",
+        valueType: "string",
+      },
+      {
+        fieldName: "Proficiency/Details",
+        placeholder: "e.g. Expert",
         valueType: "string",
       },
     ],

@@ -45,20 +45,27 @@ function ExperienceSection({ experience }) {
   );
 }
 
-function RenderedCv({ cvData }) {
-  const generalInfo = cvData.find(
-    (section) => section.name === "General Information"
-  ).data;
-  const education = cvData.find((section) => section.name === "Education").data;
-  const experience = cvData.find(
-    (section) => section.name === "Practical Experience"
-  ).data;
+function Section({ title, data }) {
+  return (
+    <div className={`cv-${title.toLowerCase().replace(/ /g, "-")}`}>
+      <h2>{title}</h2>
+      <div>
+        {Object.keys(data).map((key) => (
+          <p key={key}>
+            <strong>{key}:</strong> {data[key]}
+          </p>
+        ))}
+      </div>
+    </div>
+  );
+}
 
+function RenderedCv({ cvData }) {
   return (
     <div className="rendered-cv-container">
-      <Header info={generalInfo} />
-      <EducationSection education={education} />
-      <ExperienceSection experience={experience} />
+      {cvData.map((section) => (
+        <Section key={section.name} title={section.name} data={section.data} />
+      ))}
     </div>
   );
 }
