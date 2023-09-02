@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
 import "../../styles/EditSectionStyles.css";
 
@@ -33,7 +34,7 @@ function ButtonContainer() {
 }
 
 // eslint-disable-next-line react/prop-types
-function EditForm({ fields }) {
+function EditForm({ fields, sectionData, handleInputChange }) {
   return (
     <form>
       {fields.map((field, index) => (
@@ -45,6 +46,8 @@ function EditForm({ fields }) {
             type={field.valueType === "date" ? "date" : "text"}
             id={field.fieldName.replace(" ", "").toLowerCase()}
             placeholder={field.placeholder}
+            value={sectionData[field.fieldName] || ""}
+            onChange={(e) => handleInputChange(field.fieldName, e.target.value)}
           />
         </div>
       ))}
@@ -69,7 +72,7 @@ EditSection.propTypes = {
   }).isRequired,
 };
 
-function EditSection({ section }) {
+function EditSection({ section, sectionData, handleInputChange }) {
   return (
     <div className="edit-section-container">
       <div>
@@ -77,7 +80,13 @@ function EditSection({ section }) {
           sectionName={section.name}
           toolTipMessage={section.toolTipMessage}
         />
-        <EditForm fields={section.formFields} />
+        <EditForm
+          fields={section.formFields}
+          sectionData={sectionData}
+          handleInputChange={(fieldName, value) =>
+            handleInputChange(section.name, fieldName, value)
+          }
+        />
       </div>
       <ButtonContainer />
     </div>

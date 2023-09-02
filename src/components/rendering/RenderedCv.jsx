@@ -1,4 +1,4 @@
-import { editableSections } from "../edition/editableSections";
+/* eslint-disable react/prop-types */
 import "../../styles/RenderedCv.css";
 
 function Header({ info }) {
@@ -45,22 +45,14 @@ function ExperienceSection({ experience }) {
   );
 }
 
-function RenderedCv() {
-  // For now, using placeholders from the provided array
-  const generalInfo = editableSections[0].formFields.reduce((acc, field) => {
-    acc[field.fieldName] = field.placeholder;
-    return acc;
-  }, {});
-
-  const education = editableSections[1].formFields.reduce((acc, field) => {
-    acc[field.fieldName] = field.placeholder;
-    return acc;
-  }, {});
-
-  const experience = editableSections[2].formFields.reduce((acc, field) => {
-    acc[field.fieldName] = field.placeholder;
-    return acc;
-  }, {});
+function RenderedCv({ cvData }) {
+  const generalInfo = cvData.find(
+    (section) => section.name === "General Information"
+  ).data;
+  const education = cvData.find((section) => section.name === "Education").data;
+  const experience = cvData.find(
+    (section) => section.name === "Practical Experience"
+  ).data;
 
   return (
     <div className="rendered-cv-container">
