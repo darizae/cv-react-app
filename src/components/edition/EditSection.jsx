@@ -23,6 +23,15 @@ TopBar.propTypes = {
   toolTipMessage: PropTypes.string.isRequired,
 };
 
+function ButtonContainer() {
+  return (
+    <div className="button-container">
+      <button>Edit</button>
+      <button>Submit</button>
+    </div>
+  );
+}
+
 // eslint-disable-next-line react/prop-types
 function EditForm({ fields }) {
   return (
@@ -39,8 +48,6 @@ function EditForm({ fields }) {
           />
         </div>
       ))}
-      <button>Submit</button>
-      <button>Edit</button>
     </form>
   );
 }
@@ -64,13 +71,16 @@ EditSection.propTypes = {
 
 function EditSection({ section }) {
   return (
-    <>
-      <TopBar
-        sectionName={section.name}
-        toolTipMessage={section.toolTipMessage}
-      ></TopBar>
-      <EditForm fields={section.formFields}></EditForm>
-    </>
+    <div className="edit-section-container">
+      <div>
+        <TopBar
+          sectionName={section.name}
+          toolTipMessage={section.toolTipMessage}
+        />
+        <EditForm fields={section.formFields} />
+      </div>
+      <ButtonContainer />
+    </div>
   );
 }
 

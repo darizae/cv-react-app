@@ -1,17 +1,15 @@
 import EditSection from "./EditSection";
-
+import "../../styles/Edit.css";
 import { editableSections } from "./editableSections";
 
 function Edit() {
-  console.log(editableSections);
   const editSections = editableSections.map((sectionInformation) => (
-    <EditSection
-      key={sectionInformation.name}
-      section={sectionInformation}
-    ></EditSection>
+    <div key={sectionInformation.name} className="edit-section">
+      <EditSection section={sectionInformation}></EditSection>
+    </div>
   ));
 
-  return <>{editSections}</>;
+  return <div className="edit-sections-container">{editSections}</div>;
 }
 
 export default Edit;
